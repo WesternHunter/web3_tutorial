@@ -26,8 +26,13 @@ contract HelloWorld {
         Info memory info = Info(newString, _id, msg.sender);
         infoMapping[_id] = info;
     }
+    // function sayHello() public view returns(string memory){
+    //     return strVar;
+    // }
 
-
+    // function setHelloWorld(string memory newString) public {
+    //     strVar = newString;
+    // }
     function addinfo(string memory helloWorldStr) internal pure returns(string memory) {
         return string.concat(helloWorldStr, " from Frank's contract.");
     }
