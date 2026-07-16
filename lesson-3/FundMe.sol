@@ -1,8 +1,8 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
-
+// import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
 // 1. 创建一个收款函数
 // 2. 记录投资人并且查看
 // 3. 在锁定期内，达到目标值，生产商可以提款
@@ -34,6 +34,7 @@ contract FundMe {
         lockTime = _lockTime;
     }
 
+    // payable 用于支付（按钮）
     function fund() external payable {
         require(convertEthToUsd(msg.value) >= MINIMUM_VALUE, "Send more ETH");
         require(block.timestamp < deploymentTimestamp + lockTime, "window is closed");
@@ -96,6 +97,7 @@ contract FundMe {
         erc20Addr = _erc20Addr;
     }
 
+    // 修改器
     modifier windowClosed() {
         require(block.timestamp >= deploymentTimestamp + lockTime, "window is not closed");
         _;
