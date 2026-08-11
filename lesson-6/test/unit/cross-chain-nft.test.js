@@ -36,7 +36,7 @@ describe("test if the nft can be locked and transferred to destchain"
         // transfer NFT from source chain to dest chain, check if the nft is locked
         it("transfer NFT from source chain to dest chain, check if the nft is locked",
             async function() {
-                await ccipLocalSimulator.requestLinkFromFaucet(poolLnU.target, ethers.parseEther("10"))
+                await ccipLocalSimulator.requestLinkFromFaucet(poolLnU.target, ethers.parseEther("1"))
 
                 
                 // lock and send with CCIP
@@ -64,7 +64,7 @@ describe("test if the nft can be burned and transferred back to sourcechain",
         it("wnft can be burned", 
             async function() {
                 // fund some Link tokens
-                ccipLocalSimulator.requestLinkFromFaucet(poolMnB.target, ethers.parseEther("10"))
+                ccipLocalSimulator.requestLinkFromFaucet(poolMnB.target, ethers.parseEther("1"))
                 
                 // grant permission
                 await wnft.approve(poolMnB.target, 0)

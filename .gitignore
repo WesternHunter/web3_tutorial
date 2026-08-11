@@ -19,3 +19,6 @@ coverage.json
 .deps 
 .states
 remix.config.json
+
+.json
+package-lock.json

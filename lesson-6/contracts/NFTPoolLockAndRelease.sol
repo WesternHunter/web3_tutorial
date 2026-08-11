@@ -97,10 +97,10 @@ contract NFTPoolLockAndRelease is CCIPReceiver, OwnerIsCreator {
 
     // lock NFT and send CCIP transaction
     function lockAndSendNFT(
-        uint256 tokenId,
-        address newOwner,
-        uint64 destChainSelector,
-        address destReceiver
+        uint256 tokenId,//要跨链的 NFT 编号
+        address newOwner,// 目标链 mint 出来的 NFT 给谁
+        uint64 destChainSelector,//这条消息要发到哪条链
+        address destReceiver//目标链上的接收合约地址
     ) public returns (bytes32){
         // verify if the transaction is sent by owner
         // comment this because the check is already performed by ERC721

@@ -22,7 +22,7 @@ task("burn-and-cross")
         console.log("transfering 10 LINK token to NFTPoolBurnAndMint contract")
         const linkAddr = networkConfig[network.config.chainId].linkToken
         const linkToken = await ethers.getContractAt("LinkToken", linkAddr)
-        const transferTx = await linkToken.transfer(nftPoolBurnAndMint.target, ethers.parseEther("10"))
+        const transferTx = await linkToken.transfer(nftPoolBurnAndMint.target, ethers.parseEther("1"))
         await transferTx.wait(6)
 
         // get chain selector

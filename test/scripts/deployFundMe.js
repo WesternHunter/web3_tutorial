@@ -23,6 +23,7 @@ async function main() {
     // 3.验证fundme合约,本地测试网不需要验证
     const currentNetwork = await ethers.provider.getNetwork()
     // 每个网络都有自己的chainID   sepolia的chainid是11155111
+    // 
     if(currentNetwork.chainId === 11155111n) {
         console.log("Waiting for 5 confirmations")
         // 等待五个区块

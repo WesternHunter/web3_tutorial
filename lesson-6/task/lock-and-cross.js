@@ -41,7 +41,7 @@ task("lock-and-cross")
         // transfer 10 LINK token from deployer to pool
         const balanceBefore = await linkToken.balanceOf(nftPoolLockAndRelease.target)
         console.log(`balance before: ${balanceBefore}`)
-        const transferTx = await linkToken.transfer(nftPoolLockAndRelease.target, ethers.parseEther("10"))
+        const transferTx = await linkToken.transfer(nftPoolLockAndRelease.target, ethers.parseEther("1"))
         await transferTx.wait(6)
         const balanceAfter = await linkToken.balanceOf(nftPoolLockAndRelease.target)
         console.log(`balance after: ${balanceAfter}`)

@@ -1,4 +1,4 @@
-require("@chainlink/env-enc").config()
+require("dotenv").config()
 require("@nomicfoundation/hardhat-toolbox");
 require("@nomicfoundation/hardhat-ethers");
 require("hardhat-deploy");
